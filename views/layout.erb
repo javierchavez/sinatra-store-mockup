@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Star Struck</title>
+    <script src="/vendor/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/css/master.css">
+
+            <script type="text/javascript">
+            $(function () {
+                $('.carousel').carousel();
+                jQuery.browser.mobile;
+            });
+            function myPopUp (type) {
+                if (type == "star") {
+                  $('.price').val("5.99")
+                  $('.item-modal-price').text("5.99")
+                  $('.item-desc').text("Description")
+                  $('#myModalLabel').text("Star")
+                  $('.item-pic').attr("src","/vendor/bootstrap/img/buystar.jpg");
+                }
+                else if (type == "tickets") {
+                  $('.price').val("5.99")
+                  $('.item-modal-price').text("5.99")
+                  $('.item-desc').text("Description")
+                  $('#myModalLabel').text("Tickets")
+                  $('.item-pic').attr("src","/vendor/bootstrap/img/terlarge.png");
+
+                }
+                else if (type == "lost") {
+                  $('.price').val("5.99")
+                  $('.item-modal-price').text("5.99")
+                  $('.item-desc').text("Description")
+                  $('#myModalLabel').text("I Lost my Coordinates")
+                  $('.item-pic').attr("src","/vendor/bootstrap/img/sun.jpeg");
+
+                }
+                else if (type == "wtee") {
+                  $('.price').val("19.99")
+                  $('.item-modal-price').text("19.99")
+                  $('.item-desc').text("Description")
+                  $('#myModalLabel').text("Womens Tee")
+                  $('.item-pic').attr("src","/vendor/bootstrap/img/tlarge.jpeg");
+
+                }
+                else if (type == "mtee") {
+                  $('.price').val("19.99")
+                  $('.item-modal-price').text("19.99")
+                  $('.item-desc').text("Description")
+                  $('#myModalLabel').text("Mens Tee")
+                  $('.item-pic').attr("src","/vendor/bootstrap/img/tmenlarge.jpeg");
+
+                }
+                else if (type == "pen") {
+                  $('.price').val("19.99")
+                  $('.item-modal-price').text("19.99")
+                  $('.item-desc').text("Description")
+                  $('#myModalLabel').text("Antigravity Pen")
+                  $('.item-pic').attr("src","/vendor/bootstrap/img/penlarge.jpeg");
+
+                }
+                else if (type == "tscope") {
+                  $('.price').val("199.00")
+                  $('.item-modal-price').text("199.00")
+                  $('.item-desc').text("Description")
+                  $('#myModalLabel').text("Telescope")
+                  $('.item-pic').attr("src","/vendor/bootstrap/img/telescoplarge.jpeg");
+
+                }
+            }
+        </script>
+  </head>
+  <body style="padding-top: 50px;">
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+
+            <a class="brand" href="#">
+              Star Struck
+            </a>
+
+            <ul class="nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/store">Store</a></li>
+              <li><a href="/who-we-are">Who We Are</a></li>
+              <li><a href="/links">Links</a></li>
+            </ul>
+
+            <ul class="nav pull-right">
+              <li class="dropdown">
+                <a href="#"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown">
+                  <% if username.nil? then %>
+                    Menu
+                  <% else %>
+                    <%= username %>
+                  <% end %>                      
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Your Total: $<%=cart%> </a></li>
+                  <% if username.nil? then %>
+                    <li><a href="/login/form">Login</a></li>
+                  <% else %>
+                    <li><a href="/logout">Logout</a></li>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+
+
+        </div>
+      </div>
+    </div>
+
+
+	<div class="container">
+		<%if @error then %>
+			<div class="alert alert-error"><%=@error%></div>
+		<% end %>
+    	<%= yield %>
+	</div>
+  <footer class="footer">
+    <div class="container">
+      <a href="#">Careers</a> ~ <a href="#">Blog</a>
+      <p>All Rights Reserved Star Struck 2013</p>
+    </div>
+  </footer>
+  </body>
+</html>
