@@ -4,7 +4,9 @@ business, with a fake store. We needed to create a business and give
 an example of what we do. I went ahead and created a quick store with
 inventory and login. 
 
-
+### Notes
+Built with Sinatra
+Not db backed
 
 ### Running
 
