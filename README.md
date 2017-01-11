@@ -5,8 +5,8 @@ an example of what we do. I went ahead and created a quick store with
 inventory and login. 
 
 ### Notes
-Built with Sinatra
-Not db backed
+- Built with Sinatra
+- Not db backed
 
 ### Running
 
